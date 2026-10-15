@@ -1,0 +1,9 @@
+key,de-DE,en-US
+tool.workshop-demo.hello|text,Hallo Server,Say hello to the server
+tool.workshop-demo.hello|icon,fa-hand-o-right,fa-hand-o-right
+workshop-demo.sidebar.button|text,Workshop,Workshop
+workshop-demo.sidebar.button|icon,fa-info-circle,fa-info-circle
+workshop-demo.sidebar.title,Workshop-Demo,Workshop demo
+workshop-demo.sidebar.word,Verbotenes Wort: %(word)s,Forbidden word: %(word)s
+workshop-demo.error.forbidden_word,Der Name darf „%(word)s“ nicht enthalten.,"The name must not contain ""%(word)s""."
+workshop.demo.note.name,Workshop-Notiz,Workshop note

@@ -1,0 +1,13 @@
+server:
+  install:
+    - server
+    - l10n
+
+webfrontend:
+  bundles:
+    - sources:
+        - webfrontend/WorkshopDemoCollectionPlugin.coffee
+        - webfrontend/WorkshopDemoSidebar.coffee
+        - webfrontend/WorkshopDemoNote.coffee
+  install:
+    - webfrontend/workshop-demo.css

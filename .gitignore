@@ -1,0 +1,5 @@
+/build
+*.coffee.js
+webfrontend/workshop-demo.js
+node_modules/
+.DS_Store

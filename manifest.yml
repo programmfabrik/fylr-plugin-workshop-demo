@@ -1,0 +1,59 @@
+plugin:
+  name: workshop-demo
+  displayname:
+    en-US: "Workshop Demo"
+    de-DE: "Workshop-Demo"
+  l10n: l10n/workshop-demo.csv
+  webfrontend:
+    url: workshop-demo.js
+    css: workshop-demo.css
+
+base_url_prefix: "webfrontend"
+
+# custom API endpoint: /api/v1/plugin/extension/workshop-demo/hello
+extensions:
+  hello:
+    exec:
+      service: "node"
+      commands:
+        - prog: "node"
+          stdin:  { type: body }
+          stdout: { type: body }
+          args:
+            - { type: "value", value: "%_exec.pluginDir%/server/extension/hello.js" }
+            - { type: "value", value: "%info.json%" }
+
+# hook into every save of "personen" objects
+callbacks:
+  db_pre_save:
+    steps:
+      - name: "clean up and check names"
+        callback: check_name
+        filter:
+          type: objecttype
+          objecttypes: [ personen ]
+    callbacks:
+      check_name:
+        exec:
+          service: "node"
+          commands:
+            - prog: "node"
+              stdin:  { type: body }
+              stdout: { type: body }
+              args:
+                - { type: "value", value: "%_exec.pluginDir%/server/callback/check_name.js" }
+
+# custom data type: custom:base.workshop-demo.note
+custom_types:
+  note:
+    mapping:
+      text: { type: text }
+      url:  { type: text_oneline, skipTerms: true }   # skipTerms: fylr 6.34.0+
+
+# one setting in the base configuration
+base_config:
+  - name: settings
+    parameters:
+      forbidden_word:
+        type: text
+        position: 0
