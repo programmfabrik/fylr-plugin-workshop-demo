@@ -7,3 +7,5 @@ workshop-demo.sidebar.title,Workshop-Demo,Workshop demo
 workshop-demo.sidebar.word,Verbotenes Wort: %(word)s,Forbidden word: %(word)s
 workshop-demo.error.forbidden_word,Der Name darf „%(word)s“ nicht enthalten.,"The name must not contain ""%(word)s""."
 workshop.demo.note.name,Workshop-Notiz,Workshop note
+server.config.name.system.settings,Einstellungen,Settings
+server.config.parameter.system.settings.forbidden_word.label,Verbotenes Wort,Forbidden word
